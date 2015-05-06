@@ -886,8 +886,18 @@ namespace SG25
                        {
                            if (reader.HasRows)
                            {
-                               reader.Read();
-                               Class1.GBEventLogtxt.Text = reader["MELDateTime"].ToString() + Environment.NewLine+  reader["MELCode"].ToString() + "  > " + reader["MELDescription"].ToString();
+                               reader.Read();                              
+                               if (Class1.GBEventLogtxt.InvokeRequired)
+                               {
+                                   Class1.GBEventLogtxt.Invoke((MethodInvoker)delegate
+                                   {
+                                       Class1.GBEventLogtxt.Text = reader["MELDateTime"].ToString() + Environment.NewLine + reader["MELCode"].ToString() + "  > " + reader["MELDescription"].ToString();
+                                   });
+                               }
+                               else
+                               {
+                                   Class1.GBEventLogtxt.Text = reader["MELDateTime"].ToString() + Environment.NewLine + reader["MELCode"].ToString() + "  > " + reader["MELDescription"].ToString();
+                               }
                            }
                        }
                    }
