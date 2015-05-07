@@ -1,0 +1,344 @@
+11:50:01 > 001 : Manual Page Loaded
+
+11:50:05 > 002 : Manual Cycle Started; Pump Started
+
+11:51:50 > 001 : Manual Page Loaded
+
+11:53:57 > 001 : Manual Page Loaded
+
+11:54:06 > 004 : Manual Cycle stopped
+
+11:55:51 > 001 : Manual Page Loaded
+
+11:55:52 > 002 : I/O Page Loaded
+
+11:55:56 > 001 : Manual Page Loaded
+
+11:55:58 > 002 : I/O Page Loaded
+
+11:56:00 > 001 : Manual Page Loaded
+
+11:56:02 > 002 : Manual Cycle Started; Pump Started
+
+11:56:14 > 004 : Manual Cycle stopped
+
+11:56:40 > 004 : Manual Cycle stopped
+
+11:56:42 > 002 : I/O Page Loaded
+
+11:56:51 > 001 : Manual Page Loaded
+
+11:56:53 > 002 : Manual Cycle Started; Pump Started
+
+11:57:10 > 004 : Manual Cycle stopped
+
+11:58:13 > 001 : Manual Page Loaded
+
+11:58:17 > 002 : I/O Page Loaded
+
+11:58:20 > 001 : Manual Page Loaded
+
+11:58:21 > 002 : Manual Cycle Started; Pump Started
+
+11:59:50 > 004 : Manual Cycle stopped
+
+13:34:02 > 001 : Manual Page Loaded
+
+13:34:43 > 001 : Manual Page Loaded
+
+13:34:46 > 002 : Manual Cycle Started; Pump Started
+
+13:34:53 > 004 : Manual Cycle stopped
+
+13:37:39 > 002 : I/O Page Loaded
+
+13:37:42 > 001 : Manual Page Loaded
+
+13:37:46 > 004 : Manual Cycle stopped
+
+13:40:39 > 002 : I/O Page Loaded
+
+13:40:41 > 001 : Manual Page Loaded
+
+13:40:43 > 002 : Manual Cycle Started; Pump Started
+
+13:57:15 > 001 : Manual Page Loaded
+
+13:57:17 > 002 : I/O Page Loaded
+
+13:57:21 > 001 : Manual Page Loaded
+
+13:57:23 > 002 : Manual Cycle Started; Pump Started
+
+13:57:29 > 004 : Manual Cycle stopped
+
+13:57:47 > 002 : I/O Page Loaded
+
+13:57:52 > 001 : Manual Page Loaded
+
+13:57:54 > 001 : Manual Page Loaded
+
+13:57:56 > 002 : I/O Page Loaded
+
+13:57:57 > 001 : Manual Page Loaded
+
+13:58:30 > 001 : Manual Page Loaded
+
+13:58:31 > 002 : I/O Page Loaded
+
+13:58:32 > 001 : Manual Page Loaded
+
+14:18:21 > 001 : Manual Page Loaded
+
+14:18:27 > 002 : I/O Page Loaded
+
+14:18:29 > 001 : Manual Page Loaded
+
+14:18:33 > 004 : Manual Cycle stopped
+
+14:19:01 > 002 : I/O Page Loaded
+
+14:19:04 > 001 : Manual Page Loaded
+
+14:19:12 > 002 : Manual Cycle Started; Pump Started
+
+14:19:20 > 004 : Manual Cycle stopped
+
+14:19:47 > 002 : I/O Page Loaded
+
+14:19:49 > 001 : Manual Page Loaded
+
+14:20:12 > 001 : Manual Page Loaded
+
+14:20:17 > 002 : I/O Page Loaded
+
+14:20:22 > 001 : Manual Page Loaded
+
+14:20:25 > 002 : I/O Page Loaded
+
+14:20:30 > 001 : Manual Page Loaded
+
+14:20:35 > 001 : Manual Page Loaded
+
+14:20:36 > 002 : I/O Page Loaded
+
+14:20:38 > 001 : Manual Page Loaded
+
+14:20:47 > 002 : I/O Page Loaded
+
+14:20:49 > 001 : Manual Page Loaded
+
+14:23:14 > 001 : Manual Page Loaded
+
+14:24:05 > 002 : I/O Page Loaded
+
+14:24:10 > 001 : Manual Page Loaded
+
+14:24:37 > 001 : Manual Page Loaded
+
+14:24:38 > 002 : I/O Page Loaded
+
+14:24:40 > 001 : Manual Page Loaded
+
+14:24:43 > 002 : I/O Page Loaded
+
+14:24:44 > 001 : Manual Page Loaded
+
+14:24:50 > 001 : Manual Page Loaded
+
+14:24:54 > 002 : I/O Page Loaded
+
+14:24:55 > 001 : Manual Page Loaded
+
+14:24:59 > 001 : Manual Page Loaded
+
+14:26:35 > 001 : Manual Page Loaded
+
+14:26:38 > 002 : I/O Page Loaded
+
+14:26:39 > 001 : Manual Page Loaded
+
+14:26:42 > 002 : Manual Cycle Started; Pump Started
+
+14:26:50 > 004 : Manual Cycle stopped
+
+14:27:14 > 002 : I/O Page Loaded
+
+14:27:16 > 001 : Manual Page Loaded
+
+14:27:17 > 004 : Manual Cycle stopped
+
+14:29:12 > 002 : I/O Page Loaded
+
+14:29:15 > 001 : Manual Page Loaded
+
+14:29:32 > 002 : Manual Cycle Started; Pump Started
+
+14:29:40 > 004 : Manual Cycle stopped
+
+14:30:33 > 001 : Manual Page Loaded
+
+14:30:35 > 002 : Manual Cycle Started; Pump Started
+
+14:30:49 > 002 : I/O Page Loaded
+
+14:30:53 > 001 : Manual Page Loaded
+
+14:30:54 > 004 : Manual Cycle stopped
+
+14:30:57 > 002 : I/O Page Loaded
+
+14:30:58 > 001 : Manual Page Loaded
+
+14:31:00 > 002 : I/O Page Loaded
+
+14:31:01 > 001 : Manual Page Loaded
+
+14:36:31 > 001 : Manual Page Loaded
+
+14:36:32 > 002 : I/O Page Loaded
+
+14:36:38 > 001 : Manual Page Loaded
+
+14:36:41 > 002 : I/O Page Loaded
+
+14:36:44 > 001 : Manual Page Loaded
+
+14:36:46 > 002 : I/O Page Loaded
+
+14:36:47 > 001 : Manual Page Loaded
+
+14:36:52 > 001 : Manual Page Loaded
+
+14:36:53 > 002 : I/O Page Loaded
+
+14:36:55 > 001 : Manual Page Loaded
+
+14:37:16 > 001 : Manual Page Loaded
+
+14:37:20 > 002 : I/O Page Loaded
+
+14:37:22 > 001 : Manual Page Loaded
+
+14:37:23 > 002 : Manual Cycle Started; Pump Started
+
+14:37:30 > 004 : Manual Cycle stopped
+
+14:37:50 > 002 : I/O Page Loaded
+
+14:37:53 > 001 : Manual Page Loaded
+
+14:39:46 > 001 : Manual Page Loaded
+
+14:39:47 > 002 : I/O Page Loaded
+
+14:39:49 > 001 : Manual Page Loaded
+
+14:39:51 > 002 : Manual Cycle Started; Pump Started
+
+14:39:57 > 004 : Manual Cycle stopped
+
+14:40:12 > 002 : I/O Page Loaded
+
+14:40:15 > 001 : Manual Page Loaded
+
+14:40:46 > 001 : Manual Page Loaded
+
+14:40:48 > 002 : I/O Page Loaded
+
+14:40:50 > 001 : Manual Page Loaded
+
+14:40:51 > 002 : Manual Cycle Started; Pump Started
+
+14:40:58 > 004 : Manual Cycle stopped
+
+14:41:13 > 002 : I/O Page Loaded
+
+14:41:16 > 001 : Manual Page Loaded
+
+14:42:29 > 001 : Manual Page Loaded
+
+14:42:30 > 002 : Manual Cycle Started; Pump Started
+
+14:42:36 > 004 : Manual Cycle stopped
+
+14:42:41 > 002 : I/O Page Loaded
+
+14:42:46 > 001 : Manual Page Loaded
+
+14:42:57 > 002 : I/O Page Loaded
+
+14:43:05 > 001 : Manual Page Loaded
+
+14:45:07 > 001 : Manual Page Loaded
+
+14:45:08 > 002 : Manual Cycle Started; Pump Started
+
+14:45:15 > 004 : Manual Cycle stopped
+
+14:45:35 > 002 : I/O Page Loaded
+
+14:45:38 > 001 : Manual Page Loaded
+
+14:51:48 > 001 : Manual Page Loaded
+
+14:53:16 > 001 : Manual Page Loaded
+
+14:53:18 > 002 : I/O Page Loaded
+
+14:53:20 > 001 : Manual Page Loaded
+
+14:53:21 > 002 : Manual Cycle Started; Pump Started
+
+14:53:31 > 004 : Manual Cycle stopped
+
+14:53:46 > 002 : I/O Page Loaded
+
+14:53:48 > 001 : Manual Page Loaded
+
+14:55:48 > 001 : Manual Page Loaded
+
+14:55:49 > 002 : Manual Cycle Started; Pump Started
+
+14:55:55 > 004 : Manual Cycle stopped
+
+14:57:43 > 001 : Manual Page Loaded
+
+14:57:45 > 002 : I/O Page Loaded
+
+14:57:47 > 001 : Manual Page Loaded
+
+14:57:50 > 002 : Manual Cycle Started; Pump Started
+
+14:58:00 > 004 : Manual Cycle stopped
+
+14:58:41 > 002 : I/O Page Loaded
+
+14:58:43 > 001 : Manual Page Loaded
+
+14:58:50 > 002 : I/O Page Loaded
+
+14:58:52 > 001 : Manual Page Loaded
+
+15:00:39 > 001 : Manual Page Loaded
+
+15:00:42 > 002 : Manual Cycle Started; Pump Started
+
+15:00:49 > 004 : Manual Cycle stopped
+
+15:01:23 > 002 : I/O Page Loaded
+
+15:01:32 > 001 : Manual Page Loaded
+
+15:01:38 > 002 : Manual Cycle Started; Pump Started
+
+15:01:44 > 004 : Manual Cycle stopped
+
+15:02:38 > 002 : I/O Page Loaded
+
+15:02:49 > 001 : Manual Page Loaded
+
+15:02:50 > 002 : Manual Cycle Started; Pump Started
+
+15:02:57 > 004 : Manual Cycle stopped
+

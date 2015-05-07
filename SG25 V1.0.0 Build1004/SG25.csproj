@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C3505AE-ED56-4E51-B6B0-2D73DB69534F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SG25</RootNamespace>
+    <AssemblyName>SG25</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>QML-EX-1.1.2.11</ProductName>
+    <PublisherName>SCI-Automation</PublisherName>
+    <SuiteName>QML-EX-1.1.2.11</SuiteName>
+    <MinimumRequiredVersion>1.1.2.5</MinimumRequiredVersion>
+    <WebPage>QMLEX-1.1.2.11</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>1.1.2.11</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SG25.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AC93DB9C65DF279972C3EB9BF6919ED57910C9E6</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Advantech.Adam, Version=8.2.7.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Advantech.Adam.dll</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Common, Version=8.2.7.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Advantech.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Advantech.Protocol, Version=8.2.7.0, Culture=neutral, PublicKeyToken=c24039c75946be9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Advantech.Protocol.dll</HintPath>
+    </Reference>
+    <Reference Include="Apax_IO_Module_Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Apax_IO_Module_Library.dll</HintPath>
+    </Reference>
+    <Reference Include="KnobControl">
+      <HintPath>.\KnobControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="5028FormSafetySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5028FormSafetySetting.designer.cs">
+      <DependentUpon>5028FormSafetySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5045FormSafetySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5045FormSafetySetting.designer.cs">
+      <DependentUpon>5045FormSafetySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5046FormSafetySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5046FormSafetySetting.designer.cs">
+      <DependentUpon>5046FormSafetySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alphapad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alphapad.Designer.cs">
+      <DependentUpon>Alphapad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APS168.cs" />
+    <Compile Include="APS_Define.cs" />
+    <Compile Include="Avantech.cs" />
+    <Compile Include="AvantechAIs.cs" />
+    <Compile Include="AvantechAOs.cs" />
+    <Compile Include="AvantechDIOs.cs" />
+    <Compile Include="AvantechDIs.cs" />
+    <Compile Include="AvantechDOs.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="clsUser.cs" />
+    <Compile Include="ConnectPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectPage.Designer.cs">
+      <DependentUpon>ConnectPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlarmLog.Designer.cs">
+      <DependentUpon>AlarmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CouplerInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CouplerInformation.Designer.cs">
+      <DependentUpon>CouplerInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomGas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomGas.Designer.cs">
+      <DependentUpon>CustomGas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documentation.Designer.cs">
+      <DependentUpon>Documentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirstRun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstRun.Designer.cs">
+      <DependentUpon>FirstRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GasSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GasSetup.Designer.cs">
+      <DependentUpon>GasSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Input.Designer.cs">
+      <DependentUpon>Input.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IOInfo.Designer.cs">
+      <DependentUpon>IOInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Leak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leak.Designer.cs">
+      <DependentUpon>Leak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogEventAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogEventAuto.Designer.cs">
+      <DependentUpon>LogEventAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginConnection.Designer.cs">
+      <DependentUpon>LoginConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main1.designer.cs">
+      <DependentUpon>Main1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manual.Designer.cs">
+      <DependentUpon>Manual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifySuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifySuccess.Designer.cs">
+      <DependentUpon>ModifySuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFTimeCont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFTimeCont.designer.cs">
+      <DependentUpon>RFTimeCont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numeric-Pad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numeric-Pad.Designer.cs">
+      <DependentUpon>Numeric-Pad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFSetup.Designer.cs">
+      <DependentUpon>RFSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Setup1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setup1.Designer.cs">
+      <DependentUpon>Setup1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graph.Designer.cs">
+      <DependentUpon>Graph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programs.Designer.cs">
+      <DependentUpon>Programs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupDataSet.cs">
+      <DependentUpon>SetupDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SetupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SystemGlobals.cs" />
+    <Compile Include="TunerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TunerPage.Designer.cs">
+      <DependentUpon>TunerPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserConnectionSelectionPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserConnectionSelectionPage.designer.cs">
+      <DependentUpon>UserConnectionSelectionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersAuthor.Designer.cs">
+      <DependentUpon>UsersAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mode.Designer.cs">
+      <DependentUpon>Mode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wait_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wait_Form.designer.cs">
+      <DependentUpon>Wait_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wait_Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wait_Form1.designer.cs">
+      <DependentUpon>Wait_Form1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="5028FormSafetySetting.resx">
+      <DependentUpon>5028FormSafetySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5045FormSafetySetting.resx">
+      <DependentUpon>5045FormSafetySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5046FormSafetySetting.resx">
+      <DependentUpon>5046FormSafetySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alphapad.resx">
+      <DependentUpon>Alphapad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectPage.resx">
+      <DependentUpon>ConnectPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlarmLog.resx">
+      <DependentUpon>AlarmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CouplerInformation.resx">
+      <DependentUpon>CouplerInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomGas.resx">
+      <DependentUpon>CustomGas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documentation.resx">
+      <DependentUpon>Documentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstRun.resx">
+      <DependentUpon>FirstRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GasSetup.resx">
+      <DependentUpon>GasSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input.resx">
+      <DependentUpon>Input.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOInfo.resx">
+      <DependentUpon>IOInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leak.resx">
+      <DependentUpon>Leak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogEventAuto.resx">
+      <DependentUpon>LogEventAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginConnection.resx">
+      <DependentUpon>LoginConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main1.resx">
+      <DependentUpon>Main1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manual.resx">
+      <DependentUpon>Manual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifySuccess.resx">
+      <DependentUpon>ModifySuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFTimeCont.resx">
+      <DependentUpon>RFTimeCont.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numeric-Pad.resx">
+      <DependentUpon>Numeric-Pad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFSetup.resx">
+      <DependentUpon>RFSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setup1.resx">
+      <DependentUpon>Setup1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graph.resx">
+      <DependentUpon>Graph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programs.resx">
+      <DependentUpon>Programs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TunerPage.resx">
+      <DependentUpon>TunerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserConnectionSelectionPage.resx">
+      <DependentUpon>UserConnectionSelectionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mode.resx">
+      <DependentUpon>Mode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersAuthor.resx">
+      <DependentUpon>UsersAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wait_Form.resx">
+      <DependentUpon>Wait_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wait_Form1.resx">
+      <DependentUpon>Wait_Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SetupDataSet.xsc">
+      <DependentUpon>SetupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SetupDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SetupDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SetupDataSet.xss">
+      <DependentUpon>SetupDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RF-MTR-000_REVG_small.png" />
+    <None Include="Resources\APG100.png" />
+    <None Include="Resources\info1.bmp" />
+    <None Include="Resources\Titan Front Door Plasma.png" />
+    <None Include="Resources\XDS35i.png" />
+    <None Include="Resources\SMC XLA ON Vac.jpg" />
+    <None Include="Resources\SMC XLA ON.jpg" />
+    <None Include="Resources\SMC XLA ON Press.jpg" />
+    <None Include="Resources\SMC XSA  ON.jpg" />
+    <None Include="Resources\SMC XSA OFF.jpg" />
+    <None Include="Resources\RF Sticker.png" />
+    <None Include="Resources\RF Sticker OFF.jpg" />
+    <None Include="Resources\Open Chamber.png" />
+    <None Include="Resources\Titan Front Door.png" />
+    <None Include="Resources\Gas Panel 3.bmp" />
+    <None Include="Resources\TTNM PNECLEUS ASSY_REVA+.JPG" />
+    <None Include="Resources\Screen shot 2012-06-13 at PM 05.49.47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PumpOk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XDS35i Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PumpstatusOff1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SMC XLA OFF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Titan-M.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Titan Front Door1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{EF404E00-EDA6-101A-8DAF-00DD010F7EBB}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pumpstatus ON.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\With Plasma1.png" />
+    <None Include="Resources\Back Door closed11.png" />
+    <None Include="Resources\Doors closed1 with plasma1.png" />
+    <None Include="Resources\Doors closed11.png" />
+    <None Include="Resources\Doors open11.png" />
+    <None Include="Resources\Front Door closed11.png" />
+    <None Include="Resources\Inficonn.png" />
+    <Content Include="Resources\ISO_Perspective View_ON.png" />
+    <None Include="Resources\ISO_Perspective View_ON1.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
