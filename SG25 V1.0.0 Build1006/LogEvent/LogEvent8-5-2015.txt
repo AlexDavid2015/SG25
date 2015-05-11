@@ -1,0 +1,172 @@
+09:06:33 > 001 : Connected Successfuuly
+
+09:08:27 > 001 : Connected Successfuuly
+
+09:08:52 > 001 : Connected Successfuuly
+
+09:09:17 > 001 : Connected Successfuuly
+
+09:09:42 > 003 : Login Suceessfully
+
+09:12:34 > 001 : Connected Successfuuly
+
+09:12:49 > 003 : Login Suceessfully
+
+09:17:29 > 001 : Connected Successfuuly
+
+09:17:49 > 003 : Login Suceessfully
+
+09:22:48 > 001 : Connected Successfuuly
+
+09:26:39 > 001 : Connected Successfuuly
+
+09:26:55 > 003 : Login Suceessfully
+
+10:30:13 > 001 : Connected Successfuuly
+
+10:30:31 > 003 : Login Suceessfully
+
+10:30:36 > 007 : Automatic Page Started
+
+10:42:48 > 001 : Connected Successfuuly
+
+10:43:04 > 003 : Login Suceessfully
+
+10:44:00 > 001 : Connected Successfuuly
+
+10:45:15 > 001 : Connected Successfuuly
+
+10:45:30 > 003 : Login Suceessfully
+
+10:50:05 > 001 : Connected Successfuuly
+
+10:50:43 > 003 : Login Suceessfully
+
+10:54:25 > 001 : Connected Successfuuly
+
+10:55:04 > 001 : Connected Successfuuly
+
+10:57:36 > 001 : Connected Successfuuly
+
+11:01:23 > 001 : Connected Successfuuly
+
+11:01:40 > 003 : Login Suceessfully
+
+11:03:39 > 001 : Connected Successfuuly
+
+11:06:54 > 001 : Connected Successfuuly
+
+11:07:49 > 001 : Connected Successfuuly
+
+11:09:25 > 001 : Connected Successfuuly
+
+11:12:39 > 001 : Connected Successfuuly
+
+11:15:29 > 001 : Connected Successfuuly
+
+11:20:03 > 001 : Connected Successfuuly
+
+11:23:10 > 001 : Connected Successfuuly
+
+11:30:07 > 001 : Connected Successfuuly
+
+11:34:26 > 001 : Connected Successfuuly
+
+11:36:07 > 001 : Connected Successfuuly
+
+11:37:06 > 001 : Connected Successfuuly
+
+11:40:08 > 001 : Connected Successfuuly
+
+17:19:59 > 001 : Connected Successfuuly
+
+17:21:57 > 002 : Connection Failed
+
+17:22:01 > 002 : Connection Failed
+
+17:22:06 > 002 : Connection Failed
+
+17:22:11 > 002 : Connection Failed
+
+17:22:16 > 002 : Connection Failed
+
+17:22:21 > 002 : Connection Failed
+
+17:22:26 > 002 : Connection Failed
+
+17:22:31 > 002 : Connection Failed
+
+17:22:36 > 002 : Connection Failed
+
+17:22:41 > 002 : Connection Failed
+
+17:22:46 > 002 : Connection Failed
+
+17:22:51 > 002 : Connection Failed
+
+17:22:56 > 002 : Connection Failed
+
+17:23:01 > 002 : Connection Failed
+
+17:23:06 > 002 : Connection Failed
+
+17:23:11 > 002 : Connection Failed
+
+17:23:16 > 002 : Connection Failed
+
+17:23:21 > 002 : Connection Failed
+
+17:23:26 > 002 : Connection Failed
+
+17:23:31 > 002 : Connection Failed
+
+17:23:36 > 002 : Connection Failed
+
+17:23:41 > 002 : Connection Failed
+
+17:23:46 > 002 : Connection Failed
+
+17:23:51 > 002 : Connection Failed
+
+17:23:56 > 002 : Connection Failed
+
+17:24:01 > 002 : Connection Failed
+
+17:24:06 > 002 : Connection Failed
+
+17:24:11 > 002 : Connection Failed
+
+17:24:16 > 002 : Connection Failed
+
+17:24:19 > 001 : Connected Successfuuly
+
+17:24:38 > 002 : Connection Failed
+
+17:24:41 > 002 : Connection Failed
+
+17:24:46 > 002 : Connection Failed
+
+17:24:51 > 002 : Connection Failed
+
+17:24:56 > 002 : Connection Failed
+
+17:25:01 > 002 : Connection Failed
+
+17:25:06 > 002 : Connection Failed
+
+17:25:11 > 002 : Connection Failed
+
+17:25:14 > 001 : Connected Successfuuly
+
+17:25:41 > 001 : Connected Successfuuly
+
+17:36:46 > 007 : Automatic Page Started
+
+17:41:03 > 002 : Connection Failed
+
+17:41:07 > 002 : Connection Failed
+
+17:46:32 > 001 : Connected Successfuuly
+
+17:47:04 > 001 : Connected Successfuuly
+

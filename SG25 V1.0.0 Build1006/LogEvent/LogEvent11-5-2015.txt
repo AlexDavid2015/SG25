@@ -1,0 +1,38 @@
+10:44:14 > 001 : Connected Successfuuly
+
+10:44:38 > 003 : Login Suceessfully
+
+10:51:35 > 007 : Automatic Page Started
+
+10:55:43 > 002 : Connection Failed
+
+10:55:46 > 002 : Connection Failed
+
+10:55:51 > 002 : Connection Failed
+
+10:55:56 > 002 : Connection Failed
+
+10:56:01 > 002 : Connection Failed
+
+11:03:03 > 002 : Connection Failed
+
+11:03:17 > 001 : Connected Successfuuly
+
+11:05:15 > 007 : Automatic Page Started
+
+11:06:22 > 001 : Connected Successfuuly
+
+11:10:11 > 001 : Connected Successfuuly
+
+11:10:24 > 003 : Login Suceessfully
+
+11:10:31 > 007 : Automatic Page Started
+
+11:10:56 > 007 : Automatic Page Started
+
+11:12:03 > 001 : Connected Successfuuly
+
+11:12:19 > 003 : Login Suceessfully
+
+11:18:36 > 003 : Login Suceessfully
+
