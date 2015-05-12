@@ -1,0 +1,112 @@
+10:44:40 > 001 : Manual Page Loaded
+
+10:44:41 > 002 : I/O Page Loaded
+
+10:44:48 > 001 : Manual Page Loaded
+
+10:45:02 > 002 : I/O Page Loaded
+
+10:46:32 > 001 : Manual Page Loaded
+
+10:46:49 > 002 : I/O Page Loaded
+
+10:46:57 > 001 : Manual Page Loaded
+
+10:51:02 > 001 : Manual Page Loaded
+
+10:51:45 > 001 : Manual Page Loaded
+
+10:53:48 > 004 : Manual Cycle stopped
+
+10:54:16 > 002 : Manual Cycle Started; Pump Started
+
+10:54:28 > 004 : Manual Cycle stopped
+
+10:54:55 > 002 : Manual Cycle Started; Pump Started
+
+10:55:04 > 004 : Manual Cycle stopped
+
+11:03:37 > 001 : Manual Page Loaded
+
+11:03:46 > 002 : I/O Page Loaded
+
+11:03:50 > 001 : Manual Page Loaded
+
+11:03:54 > 002 : Manual Cycle Started; Pump Started
+
+11:04:04 > 004 : Manual Cycle stopped
+
+11:04:30 > 002 : Manual Cycle Started; Pump Started
+
+11:04:47 > 004 : Manual Cycle stopped
+
+11:05:22 > 001 : Manual Page Loaded
+
+11:05:23 > 002 : I/O Page Loaded
+
+11:05:43 > 001 : Manual Page Loaded
+
+11:05:45 > 002 : Manual Cycle Started; Pump Started
+
+11:05:59 > 004 : Manual Cycle stopped
+
+11:06:33 > 001 : Manual Page Loaded
+
+11:07:02 > 004 : Manual Cycle stopped
+
+11:07:29 > 002 : I/O Page Loaded
+
+11:07:40 > 001 : Manual Page Loaded
+
+11:07:42 > 002 : Manual Cycle Started; Pump Started
+
+11:08:02 > 004 : Manual Cycle stopped
+
+11:10:26 > 001 : Manual Page Loaded
+
+11:10:36 > 001 : Manual Page Loaded
+
+11:10:36 > 002 : I/O Page Loaded
+
+11:10:50 > 001 : Manual Page Loaded
+
+11:10:52 > 002 : I/O Page Loaded
+
+11:10:54 > 001 : Manual Page Loaded
+
+11:11:00 > 001 : Manual Page Loaded
+
+11:11:01 > 002 : Manual Cycle Started; Pump Started
+
+11:11:13 > 004 : Manual Cycle stopped
+
+11:12:26 > 001 : Manual Page Loaded
+
+11:12:35 > 002 : Manual Cycle Started; Pump Started
+
+11:14:30 > 002 : I/O Page Loaded
+
+11:14:41 > 001 : Manual Page Loaded
+
+11:17:12 > 004 : Manual Cycle stopped
+
+11:17:13 > 004 : Manual Cycle stopped
+
+11:17:28 > 002 : I/O Page Loaded
+
+11:17:49 > 001 : Manual Page Loaded
+
+11:17:52 > 002 : I/O Page Loaded
+
+11:17:58 > 001 : Manual Page Loaded
+
+11:18:01 > 002 : I/O Page Loaded
+
+11:18:26 > 001 : Manual Page Loaded
+
+11:18:37 > 001 : Manual Page Loaded
+
+11:18:38 > 002 : I/O Page Loaded
+
+11:19:04 > 001 : Manual Page Loaded
+
