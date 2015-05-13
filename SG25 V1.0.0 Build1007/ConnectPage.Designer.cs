@@ -2805,7 +2805,7 @@
             // 
             // OutputTimer
             // 
-            this.OutputTimer.Interval = 500;
+            this.OutputTimer.Interval = 250;
             this.OutputTimer.Tick += new System.EventHandler(this.OutputTimer_Tick);
             // 
             // AutoStartup

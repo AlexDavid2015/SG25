@@ -1593,45 +1593,45 @@ namespace SG25
             {
                 //StatusBar_IO.Text = "Polling (Interval=" + timer1.Interval.ToString() + "ms): ";
 
-                //// ***********DI*********** ////
-                if (Avantech.DIEnabled)
-                {
-                    cmdNETWORK.BackColor = Color.Green;
-                    bDIRet = AvantechDIs.RefreshData(ref DIvalues);
-                    DIvalues.CopyTo(Class1.DIOArrayValues, 0);
-                    Class1.GetDI(Class1.DIOArrayValues);
-                    lblDIErr.Invoke((MethodInvoker)delegate { lblDIErr.Text = bDIRet ? "0" : "-1"; });//lblDIErr.Text = bDIRet ? "0" : "-1";
-                    cmdNETWORK.BackColor = Color.Gray;
-                    if (bDIRet)
-                    {
-                        AvantechDIs.m_iScanCount++;
-                        AvantechDIs.m_iFailCount = 0;
-                        this.Invoke((MethodInvoker)delegate
-                        {
-                            for (i = 0; i < iDIChannelTotal; i++)
-                            {
-                                DI[i].BackColor = DIvalues[i] ? Color.Green : Color.Red;
-                                
-                            }
-                        });
-                        
-                       }
-                    else
-                    {
-                        AvantechDIs.m_iFailCount++;
-                    }
+                ////// ***********DI*********** ////
+                //if (Avantech.DIEnabled)
+                //{
+                //    cmdNETWORK.BackColor = Color.Green;
+                //    bDIRet = AvantechDIs.RefreshData(ref DIvalues);
+                //    DIvalues.CopyTo(Class1.DIOArrayValues, 0);
+                //    Class1.GetDI(Class1.DIOArrayValues);
+                //    lblDIErr.Invoke((MethodInvoker)delegate { lblDIErr.Text = bDIRet ? "0" : "-1"; });//lblDIErr.Text = bDIRet ? "0" : "-1";
+                //    cmdNETWORK.BackColor = Color.Gray;
+                //    if (bDIRet)
+                //    {
+                //        AvantechDIs.m_iScanCount++;
+                //        AvantechDIs.m_iFailCount = 0;
+                //        this.Invoke((MethodInvoker)delegate
+                //        {
+                //            for (i = 0; i < iDIChannelTotal; i++)
+                //            {
+                //                DI[i].BackColor = DIvalues[i] ? Color.Green : Color.Red;
 
-                    if (AvantechDIs.m_iFailCount > 0)
-                    {
-                        Avantech.DIEnabled = false;//timer1.Enabled = false;
-                        Avantech.bModbusConnected = false;
-                        AvantechConnectTimer.Enabled = true;
-                        ResetAvantechConnectTimerProperty();
-                    }
-                    if (AvantechDIs.m_iScanCount % 50 == 0)
-                        GC.Collect();
-                }
-                //// ***********End of DI*********** ////
+                //            }
+                //        });
+
+                //    }
+                //    else
+                //    {
+                //        AvantechDIs.m_iFailCount++;
+                //    }
+
+                //    if (AvantechDIs.m_iFailCount > 0)
+                //    {
+                //        Avantech.DIEnabled = false;//timer1.Enabled = false;
+                //        Avantech.bModbusConnected = false;
+                //        AvantechConnectTimer.Enabled = true;
+                //        ResetAvantechConnectTimerProperty();
+                //    }
+                //    if (AvantechDIs.m_iScanCount % 50 == 0)
+                //        GC.Collect();
+                //}
+                ////// ***********End of DI*********** ////
 
                 //// ***********AI*********** ////
                 if (Avantech.AIEnabled)
@@ -1648,52 +1648,52 @@ namespace SG25
                         for (i = 0; i < iAIChannelTotal; i++)
                         {
                             SetText(strAIvalues[i], i);//SetText(Convert.ToString(AIvalues[i]), i);
-                          switch (i)
-                          {
-                              case 0:
-                                  Class1.AI_PressureValue =Convert.ToDouble(strAIvalues[0]);
-                                  if(Class1.AI_PressureValue<6.0)
-                                  {
-                                      Class1.Intlk = true;
-                                  }
-                                  else
-                                  {
-                                      Class1.Intlk = false;
-                                  }
-                                  break;
-                              case 1:
-                                  Class1.AI_ARFPowerValue =Math.Round(Convert.ToDouble((strAIvalues[1])), 1);
-                                  break;
-                              case 2:
-                                  Class1.AI_RFRefelctedValue = Math.Round(Convert.ToDouble((strAIvalues[2])), 1);
-                                  break;
-                              case 3:
-                                  Class1.AI_BiasValue = Math.Round(Convert.ToDouble((strAIvalues[3])), 1);
-                                  break;
-                              case 4:
-                                  Class1.AI_TuneValue = Math.Round(Convert.ToDouble((strAIvalues[4])), 2);
-                                  break;
-                              case 5:
-                                  Class1.AI_LoadValue = Math.Round(Convert.ToDouble((strAIvalues[5])), 2);
-                                  break;
-                              case 6:
-                                 Class1.AI_GAS1PSValue = Math.Round(Convert.ToDouble((strAIvalues[6])), 2);
-                                  break;
-                              case 7:
-                                  Class1.AI_GAS2PSValue = Math.Round(Convert.ToDouble((strAIvalues[7])), 2);
-                                  break;
-                              case 8:
-                                  Class1.AI_GAS1Value = Math.Round(Convert.ToDouble((strAIvalues[8])), 2);
-                                  break;
-                              case 9:
-                                  Class1.AI_GAS2Value = Math.Round(Convert.ToDouble((strAIvalues[9])), 2);
-                                  break;
-                                  
-                              default:
-                                  break; // TODO: might not be correct. Was : Exit Select
+                            switch (i)
+                            {
+                                case 0:
+                                    Class1.AI_PressureValue = Convert.ToDouble(strAIvalues[0]);
+                                    if (Class1.AI_PressureValue < 6.0)
+                                    {
+                                        Class1.Intlk = true;
+                                    }
+                                    else
+                                    {
+                                        Class1.Intlk = false;
+                                    }
+                                    break;
+                                case 1:
+                                    Class1.AI_ARFPowerValue = Math.Round(Convert.ToDouble((strAIvalues[1])), 1);
+                                    break;
+                                case 2:
+                                    Class1.AI_RFRefelctedValue = Math.Round(Convert.ToDouble((strAIvalues[2])), 1);
+                                    break;
+                                case 3:
+                                    Class1.AI_BiasValue = Math.Round(Convert.ToDouble((strAIvalues[3])), 1);
+                                    break;
+                                case 4:
+                                    Class1.AI_TuneValue = Math.Round(Convert.ToDouble((strAIvalues[4])), 2);
+                                    break;
+                                case 5:
+                                    Class1.AI_LoadValue = Math.Round(Convert.ToDouble((strAIvalues[5])), 2);
+                                    break;
+                                case 6:
+                                    Class1.AI_GAS1PSValue = Math.Round(Convert.ToDouble((strAIvalues[6])), 2);
+                                    break;
+                                case 7:
+                                    Class1.AI_GAS2PSValue = Math.Round(Convert.ToDouble((strAIvalues[7])), 2);
+                                    break;
+                                case 8:
+                                    Class1.AI_GAS1Value = Math.Round(Convert.ToDouble((strAIvalues[8])), 2);
+                                    break;
+                                case 9:
+                                    Class1.AI_GAS2Value = Math.Round(Convert.ToDouble((strAIvalues[9])), 2);
+                                    break;
 
-                                  break;
-                          }
+                                default:
+                                    break; // TODO: might not be correct. Was : Exit Select
+
+                                    break;
+                            }
                         }
                     }
                     else
@@ -1713,6 +1713,8 @@ namespace SG25
                         GC.Collect();
                 }
                 //// ***********End of AI*********** ////
+
+
                 if (Avantech.Avantech_AllFailCheckEnabled)// check all fail status
                 {
                     //if ((!Avantech.DIEnabled) && (!Avantech.AIEnabled) && (!Avantech.DOEnabled) && (!Avantech.AOEnabled) &&
@@ -1726,7 +1728,7 @@ namespace SG25
                     //}
                 }
 
-                Thread.Sleep(Avantech.m_ScanTime_LocalSys[0]);// same as Avantech's timer1(1000)
+                Thread.Sleep(Avantech.m_ScanTime_LocalSys[0]); //Thread.Sleep(Avantech.m_ScanTime_LocalSys[0]);// same as Avantech's timer1(1000)
             }
             }
             catch (Exception ex)
@@ -3751,6 +3753,12 @@ namespace SG25
             int iDIChannelTotal = AvantechDIs.m_aConf.HwIoTotal[AvantechDIs.m_tmpidx];
             bool[] DIvalues = new bool[iDIChannelTotal];
 
+            //// AI 5017H 
+            //bool bAIRet;
+            //int iAIChannelTotal = AvantechAIs.m_aConf.HwIoTotal[AvantechAIs.m_tmpidx];
+            //double[] AIvalues = new double[iAIChannelTotal];
+            //string[] strAIvalues = new string[iAIChannelTotal];
+
             // ***********DO*********** ////
             if (Avantech.DOEnabled)
             {
@@ -3763,6 +3771,7 @@ namespace SG25
                 Class1.GetDO(Class1.DOIArrayValues);
                 lblDOErr.Text = bDORet ? "0" : "-1";//lblDOErr.Text = bDORet ? "0" : "-1";
                 cmdNETWORK.BackColor = Color.Gray;
+                
                 if (bDORet)
                 {
                     AvantechDOs.m_iScanCount++;
@@ -3810,38 +3819,6 @@ namespace SG25
                 cmdNETWORK.BackColor = Color.Green;
                 bAORet = AvantechAOs.RefreshData(ref strAOvalues);
 
-                //AOOutputVals[0].Text = strAOvalues[0];
-                //AOOutputVals[1].Text = strAOvalues[1];
-                //AOOutputVals[2].Text = strAOvalues[2];
-                //AOOutputVals[3].Text = strAOvalues[3];
-                //AOOutputVals[4].Text = strAOvalues[4];
-                //AOOutputVals[5].Text = strAOvalues[5];
-                //AOOutputVals[6].Text = strAOvalues[6];
-                //AOOutputVals[7].Text = strAOvalues[7];
-
-                //// Assign AO Output Text Vals
-                //txtAOOutputVals[0].Text = strAOvalues[0];
-                //txtAOOutputVals[1].Text = strAOvalues[1];
-                //txtAOOutputVals[2].Text = strAOvalues[2];
-                //txtAOOutputVals[3].Text = strAOvalues[3];
-                //txtAOOutputVals[4].Text = strAOvalues[4];
-                //txtAOOutputVals[5].Text = strAOvalues[5];
-                //txtAOOutputVals[6].Text = strAOvalues[6];
-                //txtAOOutputVals[7].Text = strAOvalues[7];
-
-                //Double a = Convert.ToDouble(strAOvalues[0]);
-              
-               // AOTrackBarVals[0].Value = Convert.ToInt32(strAOvalues[0]);  
-               //AOTrackBarVals[1].Value = Convert.ToInt32(strAOvalues[1]);
-                //AOTrackBarVals[2].Value = Convert.ToInt32(strAOvalues[2]);
-                //AOTrackBarVals[3].Value = Convert.ToInt32(strAOvalues[3]);
-                //AOTrackBarVals[4].Value = Convert.ToInt32(strAOvalues[4]);
-                //AOTrackBarVals[5].Value = Convert.ToInt32(strAOvalues[5]);
-                //AOTrackBarVals[6].Value = Convert.ToInt32(strAOvalues[6]);
-                //AOTrackBarVals[7].Value = Convert.ToInt32(strAOvalues[7]);
-
-
-
                 lblAOErr.Text = bAORet ? "0" : "-1";//lblDOErr.Text = bDORet ? "0" : "-1";
                 cmdNETWORK.BackColor = Color.Gray;
                 if (bAORet)
@@ -3874,7 +3851,47 @@ namespace SG25
             }
             // ***********End of AO*********** ////
 
+            //// ***********DI*********** ////
+            if (Avantech.DIEnabled)
+            {
+                cmdNETWORK.BackColor = Color.Green;
+                bDIRet = AvantechDIs.RefreshData(ref DIvalues);
+                DIvalues.CopyTo(Class1.DIOArrayValues, 0);
+                Class1.GetDI(Class1.DIOArrayValues);
+                lblDIErr.Invoke((MethodInvoker)delegate { lblDIErr.Text = bDIRet ? "0" : "-1"; });//lblDIErr.Text = bDIRet ? "0" : "-1";
+                cmdNETWORK.BackColor = Color.Gray;
+                if (bDIRet)
+                {
+                    AvantechDIs.m_iScanCount++;
+                    AvantechDIs.m_iFailCount = 0;
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        for (i = 0; i < iDIChannelTotal; i++)
+                        {
+                            DI[i].BackColor = DIvalues[i] ? Color.Green : Color.Red;
 
+                        }
+                    });
+
+                }
+                else
+                {
+                    AvantechDIs.m_iFailCount++;
+                }
+
+                if (AvantechDIs.m_iFailCount > 0)
+                {
+                    Avantech.DIEnabled = false;//timer1.Enabled = false;
+                    Avantech.bModbusConnected = false;
+                    AvantechConnectTimer.Enabled = true;
+                    ResetAvantechConnectTimerProperty();
+                }
+                if (AvantechDIs.m_iScanCount % 50 == 0)
+                    GC.Collect();
+                //cmdNETWORK.BackColor = Color.Gray;
+            }
+            //// ***********End of DI*********** ////
+            
             if (Avantech.DIOEnabled)
             {
 
@@ -4173,7 +4190,7 @@ namespace SG25
                 if(DisconnectErrorOK==true)
                 {
                     Class1.DisconnectTimeElapsedSecs = Convert.ToInt32(BGWConnectTimes * AvantechConnectTimer.Interval * 0.001f);
-                    lblResumeConnectionInfo.Text = Class1.DisconnectTimeElapsedSecs + "Seconds has elapsed since disconnection!";
+                    lblResumeConnectionInfo.Text = Class1.DisconnectTimeElapsedSecs + " Seconds has elapsed since disconnection!";
                 BGWConnectTimes++;
                 if (BGWConnectTimes >= 4)// larger than 20 secs
                 {
@@ -4188,7 +4205,7 @@ namespace SG25
             catch
             {
 
-                MessageBox.Show("Connection erro, Please check Advantech Connection");
+                MessageBox.Show("Connection error, Please check Advantech Connection");
             }
           
         }
