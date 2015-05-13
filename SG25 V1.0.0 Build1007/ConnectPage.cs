@@ -906,6 +906,7 @@ namespace SG25
 
                 // Testing Output Split
                 DataAcquitionTimer.Enabled = true;
+                DataAcquitionTimer.Interval = Avantech.m_ScanTime_LocalSys[0];
                 Class1.DOOutputTimerGlobal = DataAcquitionTimer;
 
                 try
