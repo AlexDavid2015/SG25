@@ -274,7 +274,7 @@
             this.txtConnection = new System.Windows.Forms.TextBox();
             this.MainThread = new System.ComponentModel.BackgroundWorker();
             this.BGWConnect = new System.ComponentModel.BackgroundWorker();
-            this.OutputTimer = new System.Windows.Forms.Timer(this.components);
+            this.DataAcquitionTimer = new System.Windows.Forms.Timer(this.components);
             this.AutoStartup = new System.ComponentModel.BackgroundWorker();
             this.AvantechConnectTimer = new System.Windows.Forms.Timer(this.components);
             this.lblResumeConnectionInfo = new System.Windows.Forms.Label();
@@ -2803,10 +2803,10 @@
             this.BGWConnect.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGWConnect_DoWork);
             this.BGWConnect.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWConnect_RunWorkerCompleted);
             // 
-            // OutputTimer
+            // DataAcquitionTimer
             // 
-            this.OutputTimer.Interval = 250;
-            this.OutputTimer.Tick += new System.EventHandler(this.OutputTimer_Tick);
+            this.DataAcquitionTimer.Interval = 500;
+            this.DataAcquitionTimer.Tick += new System.EventHandler(this.DataAcquitionTimer_Tick);
             // 
             // AutoStartup
             // 
@@ -3051,7 +3051,7 @@
         private System.Windows.Forms.CheckBox chbxAI_2Range;
         internal System.Windows.Forms.Button cmdSystemSettings;
         internal System.Windows.Forms.Button cmdSystemToDefault;
-        internal System.Windows.Forms.Timer OutputTimer;
+        internal System.Windows.Forms.Timer DataAcquitionTimer;
         internal System.Windows.Forms.Button cmdCouplerInformation;
         private System.Windows.Forms.CheckBox ChkAutoStart;
         private System.ComponentModel.BackgroundWorker AutoStartup;

@@ -46,7 +46,7 @@ namespace SG25
 
         private void ConnectPage_Activated(object sender, EventArgs e)
         {
-            Class1.DOOutputTimerGlobal = OutputTimer;
+            Class1.DOOutputTimerGlobal = DataAcquitionTimer;
             int i = 0;
             Class1.FirstRunObj.Hide();
             if (Avantech.bModbusConnected)
@@ -675,7 +675,7 @@ namespace SG25
             DO[33] = btnDOSpare_33;
             DO[34] = btnDOSpare_34;
             DO[35] = btnDOSpare_35;
-            Class1.DOOutputTimerGlobal = OutputTimer;
+            Class1.DOOutputTimerGlobal = DataAcquitionTimer;
 
             // Assign AO High Vals
             Class1.AOHighVals[0] = lblRFSET_0High;
@@ -811,7 +811,7 @@ namespace SG25
 
             // Load Default System Setting From Database
 
-            Class1.DOOutputTimerGlobal = OutputTimer;
+            Class1.DOOutputTimerGlobal = DataAcquitionTimer;
             Class1.btnAutoStart = this.cmdStartProgram;
 
             LoadConnectionPageSettings();
@@ -905,8 +905,8 @@ namespace SG25
                 AvantechIO_Modules_Initialize();
 
                 // Testing Output Split
-                OutputTimer.Enabled = true;
-                Class1.DOOutputTimerGlobal = OutputTimer;
+                DataAcquitionTimer.Enabled = true;
+                Class1.DOOutputTimerGlobal = DataAcquitionTimer;
 
                 try
                 {
@@ -969,7 +969,7 @@ namespace SG25
                 lblDOErr.Text = "-2";
                 lblAOErr.Text = "-2";
                 
-                OutputTimer.Enabled = false;
+                DataAcquitionTimer.Enabled = false;
                 if(Class1.Connected==true)
                 {
                     AvantechConnectTimer.Enabled = true;
@@ -1010,7 +1010,7 @@ namespace SG25
                     AvantechIO_Modules_Initialize();
 
                     // Testing Output Split
-                    OutputTimer.Enabled = true;
+                    DataAcquitionTimer.Enabled = true;
 
                     try
                     {
@@ -1633,99 +1633,122 @@ namespace SG25
                 //}
                 ////// ***********End of DI*********** ////
 
-                //// ***********AI*********** ////
+                ////// ***********AI*********** ////
+                //if (Avantech.AIEnabled)
+                //{
+                //    cmdNETWORK.BackColor = Color.Green;
+                //    //bAIRet = AvantechAIs.RefreshData(ref AIvalues);
+                //    bAIRet = AvantechAIs.RefreshData(ref strAIvalues);
+                //    lblAIErr.Invoke((MethodInvoker)delegate { lblAIErr.Text = bAIRet ? "0" : "-1"; });//lblAIErr.Text = bAIRet ? "0" : "-1";
+                //    cmdNETWORK.BackColor = Color.Gray;
+                //    if (bAIRet)
+                //    {
+                //        AvantechAIs.m_iScanCount++;
+                //        AvantechAIs.m_iFailCount = 0;
+                //        for (i = 0; i < iAIChannelTotal; i++)
+                //        {
+                //            SetText(strAIvalues[i], i);//SetText(Convert.ToString(AIvalues[i]), i);
+                //            switch (i)
+                //            {
+                //                case 0:
+                //                    Class1.AI_PressureValue = Convert.ToDouble(strAIvalues[0]);
+                //                    if (Class1.AI_PressureValue < 6.0)
+                //                    {
+                //                        Class1.Intlk = true;
+                //                    }
+                //                    else
+                //                    {
+                //                        Class1.Intlk = false;
+                //                    }
+                //                    break;
+                //                case 1:
+                //                    Class1.AI_ARFPowerValue = Math.Round(Convert.ToDouble((strAIvalues[1])), 1);
+                //                    break;
+                //                case 2:
+                //                    Class1.AI_RFRefelctedValue = Math.Round(Convert.ToDouble((strAIvalues[2])), 1);
+                //                    break;
+                //                case 3:
+                //                    Class1.AI_BiasValue = Math.Round(Convert.ToDouble((strAIvalues[3])), 1);
+                //                    break;
+                //                case 4:
+                //                    Class1.AI_TuneValue = Math.Round(Convert.ToDouble((strAIvalues[4])), 2);
+                //                    break;
+                //                case 5:
+                //                    Class1.AI_LoadValue = Math.Round(Convert.ToDouble((strAIvalues[5])), 2);
+                //                    break;
+                //                case 6:
+                //                    Class1.AI_GAS1PSValue = Math.Round(Convert.ToDouble((strAIvalues[6])), 2);
+                //                    break;
+                //                case 7:
+                //                    Class1.AI_GAS2PSValue = Math.Round(Convert.ToDouble((strAIvalues[7])), 2);
+                //                    break;
+                //                case 8:
+                //                    Class1.AI_GAS1Value = Math.Round(Convert.ToDouble((strAIvalues[8])), 2);
+                //                    break;
+                //                case 9:
+                //                    Class1.AI_GAS2Value = Math.Round(Convert.ToDouble((strAIvalues[9])), 2);
+                //                    break;
+
+                //                default:
+                //                    break; // TODO: might not be correct. Was : Exit Select
+
+                //                    break;
+                //            }
+                //        }
+                //    }
+                //    else
+                //    {
+                //        AvantechAIs.m_iFailCount++;
+                //    }
+
+                //    if (AvantechAIs.m_iFailCount > 0)
+                //    {
+                //        Avantech.AIEnabled = false;//timer1.Enabled = false;
+                //        Avantech.bModbusConnected = false;
+                //        AvantechConnectTimer.Enabled = true;
+                //        ResetAvantechConnectTimerProperty();
+                //        ModuleErrorDialog objModuleErrorDialog = new ModuleErrorDialog();
+                //        objModuleErrorDialog.ShowDialog();
+                //        //MessageBox.Show("Please check the physical connection and MODBUS address setting!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
+                //    }
+                //    if (AvantechAIs.m_iScanCount % 50 == 0)
+                //        GC.Collect();
+                //}
+                ////// ***********End of AI*********** ////
+
+
+                if (Avantech.DOEnabled)
+                {
+                    cmdNETWORK.BackColor = Color.Green;
+                    Thread.Sleep(50);
+                    cmdNETWORK.BackColor = Color.Gray;
+                }
+                if (Avantech.AOEnabled)
+                {
+                    cmdNETWORK.BackColor = Color.Green;
+                    Thread.Sleep(50);
+                    cmdNETWORK.BackColor = Color.Gray;
+                }
+
+                if (Avantech.DIEnabled)
+                {
+                    cmdNETWORK.BackColor = Color.Green;
+                    Thread.Sleep(50);
+                    cmdNETWORK.BackColor = Color.Gray;
+                }
+
                 if (Avantech.AIEnabled)
                 {
                     cmdNETWORK.BackColor = Color.Green;
-                    //bAIRet = AvantechAIs.RefreshData(ref AIvalues);
-                    bAIRet = AvantechAIs.RefreshData(ref strAIvalues);
-                    lblAIErr.Invoke((MethodInvoker)delegate { lblAIErr.Text = bAIRet ? "0" : "-1"; });//lblAIErr.Text = bAIRet ? "0" : "-1";
+                    Thread.Sleep(50);
                     cmdNETWORK.BackColor = Color.Gray;
-                    if (bAIRet)
-                    {
-                        AvantechAIs.m_iScanCount++;
-                        AvantechAIs.m_iFailCount = 0;
-                        for (i = 0; i < iAIChannelTotal; i++)
-                        {
-                            SetText(strAIvalues[i], i);//SetText(Convert.ToString(AIvalues[i]), i);
-                            switch (i)
-                            {
-                                case 0:
-                                    Class1.AI_PressureValue = Convert.ToDouble(strAIvalues[0]);
-                                    if (Class1.AI_PressureValue < 6.0)
-                                    {
-                                        Class1.Intlk = true;
-                                    }
-                                    else
-                                    {
-                                        Class1.Intlk = false;
-                                    }
-                                    break;
-                                case 1:
-                                    Class1.AI_ARFPowerValue = Math.Round(Convert.ToDouble((strAIvalues[1])), 1);
-                                    break;
-                                case 2:
-                                    Class1.AI_RFRefelctedValue = Math.Round(Convert.ToDouble((strAIvalues[2])), 1);
-                                    break;
-                                case 3:
-                                    Class1.AI_BiasValue = Math.Round(Convert.ToDouble((strAIvalues[3])), 1);
-                                    break;
-                                case 4:
-                                    Class1.AI_TuneValue = Math.Round(Convert.ToDouble((strAIvalues[4])), 2);
-                                    break;
-                                case 5:
-                                    Class1.AI_LoadValue = Math.Round(Convert.ToDouble((strAIvalues[5])), 2);
-                                    break;
-                                case 6:
-                                    Class1.AI_GAS1PSValue = Math.Round(Convert.ToDouble((strAIvalues[6])), 2);
-                                    break;
-                                case 7:
-                                    Class1.AI_GAS2PSValue = Math.Round(Convert.ToDouble((strAIvalues[7])), 2);
-                                    break;
-                                case 8:
-                                    Class1.AI_GAS1Value = Math.Round(Convert.ToDouble((strAIvalues[8])), 2);
-                                    break;
-                                case 9:
-                                    Class1.AI_GAS2Value = Math.Round(Convert.ToDouble((strAIvalues[9])), 2);
-                                    break;
-
-                                default:
-                                    break; // TODO: might not be correct. Was : Exit Select
-
-                                    break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        AvantechAIs.m_iFailCount++;
-                    }
-
-                    if (AvantechAIs.m_iFailCount > 0)
-                    {
-                        Avantech.AIEnabled = false;//timer1.Enabled = false;
-                        Avantech.bModbusConnected = false;
-                        AvantechConnectTimer.Enabled = true;
-                        ResetAvantechConnectTimerProperty();
-                        //MessageBox.Show("Please check the physical connection and MODBUS address setting!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
-                    }
-                    if (AvantechAIs.m_iScanCount % 50 == 0)
-                        GC.Collect();
                 }
-                //// ***********End of AI*********** ////
 
-
-                if (Avantech.Avantech_AllFailCheckEnabled)// check all fail status
+                if (Avantech.DIOEnabled)
                 {
-                    //if ((!Avantech.DIEnabled) && (!Avantech.AIEnabled) && (!Avantech.DOEnabled) && (!Avantech.AOEnabled) &&
-                    //    (!Avantech.DIOEnabled))
-                    //{
-                    //    MessageBox.Show(new Form { TopMost = true }, "Please check the physical connection and MODBUS address setting!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
-                    //    AvantechConnectTimer.Enabled = true;
-                    //    ResetAvantechConnectTimerProperty();
-                    //    Avantech.Avantech_AllFailCheckEnabled = false;
-                    //    OutputTimer.Enabled = false;
-                    //}
+                    cmdNETWORK.BackColor = Color.Green;
+                    Thread.Sleep(50);
+                    cmdNETWORK.BackColor = Color.Gray;
                 }
 
                 Thread.Sleep(Avantech.m_ScanTime_LocalSys[0]); //Thread.Sleep(Avantech.m_ScanTime_LocalSys[0]);// same as Avantech's timer1(1000)
@@ -3722,7 +3745,7 @@ namespace SG25
             Avantech.AIEnabled = true;//timer1.Enabled = true;
         }
 
-        private void OutputTimer_Tick(object sender, EventArgs e)
+        private void DataAcquitionTimer_Tick(object sender, EventArgs e)
         {
             int i = 0;
             bool bDORet;
@@ -3753,11 +3776,11 @@ namespace SG25
             int iDIChannelTotal = AvantechDIs.m_aConf.HwIoTotal[AvantechDIs.m_tmpidx];
             bool[] DIvalues = new bool[iDIChannelTotal];
 
-            //// AI 5017H 
-            //bool bAIRet;
-            //int iAIChannelTotal = AvantechAIs.m_aConf.HwIoTotal[AvantechAIs.m_tmpidx];
-            //double[] AIvalues = new double[iAIChannelTotal];
-            //string[] strAIvalues = new string[iAIChannelTotal];
+            // AI 5017H 
+            bool bAIRet;
+            int iAIChannelTotal = AvantechAIs.m_aConf.HwIoTotal[AvantechAIs.m_tmpidx];
+            double[] AIvalues = new double[iAIChannelTotal];
+            string[] strAIvalues = new string[iAIChannelTotal];
 
             // ***********DO*********** ////
             if (Avantech.DOEnabled)
@@ -3795,7 +3818,8 @@ namespace SG25
                     AvantechConnectTimer.Enabled = true;
                     ResetAvantechConnectTimerProperty();
                     //MessageBox.Show("Please check the physical connection and MODBUS address setting!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
-
+                    ModuleErrorDialog objModuleErrorDialog = new ModuleErrorDialog();
+                    objModuleErrorDialog.ShowDialog();
                 }
                 if (AvantechDOs.m_iScanCount % 50 == 0)
                     GC.Collect();
@@ -3839,6 +3863,8 @@ namespace SG25
                     AvantechConnectTimer.Enabled = true;
                     ResetAvantechConnectTimerProperty();
                     //MessageBox.Show("Please check the physical connection and MODBUS address setting!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
+                    ModuleErrorDialog objModuleErrorDialog = new ModuleErrorDialog();
+                    objModuleErrorDialog.ShowDialog();
                 }
                 if (AvantechAOs.m_iScanCount % 50 == 0)
                     GC.Collect();
@@ -3885,12 +3911,98 @@ namespace SG25
                     Avantech.bModbusConnected = false;
                     AvantechConnectTimer.Enabled = true;
                     ResetAvantechConnectTimerProperty();
+                    ModuleErrorDialog objModuleErrorDialog = new ModuleErrorDialog();
+                    objModuleErrorDialog.ShowDialog();
                 }
                 if (AvantechDIs.m_iScanCount % 50 == 0)
                     GC.Collect();
                 //cmdNETWORK.BackColor = Color.Gray;
             }
             //// ***********End of DI*********** ////
+
+
+            //// ***********AI*********** ////
+            if (Avantech.AIEnabled)
+            {
+                cmdNETWORK.BackColor = Color.Green;
+                //bAIRet = AvantechAIs.RefreshData(ref AIvalues);
+                bAIRet = AvantechAIs.RefreshData(ref strAIvalues);
+                lblAIErr.Invoke((MethodInvoker)delegate { lblAIErr.Text = bAIRet ? "0" : "-1"; });//lblAIErr.Text = bAIRet ? "0" : "-1";
+                cmdNETWORK.BackColor = Color.Gray;
+                if (bAIRet)
+                {
+                    AvantechAIs.m_iScanCount++;
+                    AvantechAIs.m_iFailCount = 0;
+                    for (i = 0; i < iAIChannelTotal; i++)
+                    {
+                        SetText(strAIvalues[i], i);//SetText(Convert.ToString(AIvalues[i]), i);
+                        switch (i)
+                        {
+                            case 0:
+                                Class1.AI_PressureValue = Convert.ToDouble(strAIvalues[0]);
+                                if (Class1.AI_PressureValue < 6.0)
+                                {
+                                    Class1.Intlk = true;
+                                }
+                                else
+                                {
+                                    Class1.Intlk = false;
+                                }
+                                break;
+                            case 1:
+                                Class1.AI_ARFPowerValue = Math.Round(Convert.ToDouble((strAIvalues[1])), 1);
+                                break;
+                            case 2:
+                                Class1.AI_RFRefelctedValue = Math.Round(Convert.ToDouble((strAIvalues[2])), 1);
+                                break;
+                            case 3:
+                                Class1.AI_BiasValue = Math.Round(Convert.ToDouble((strAIvalues[3])), 1);
+                                break;
+                            case 4:
+                                Class1.AI_TuneValue = Math.Round(Convert.ToDouble((strAIvalues[4])), 2);
+                                break;
+                            case 5:
+                                Class1.AI_LoadValue = Math.Round(Convert.ToDouble((strAIvalues[5])), 2);
+                                break;
+                            case 6:
+                                Class1.AI_GAS1PSValue = Math.Round(Convert.ToDouble((strAIvalues[6])), 2);
+                                break;
+                            case 7:
+                                Class1.AI_GAS2PSValue = Math.Round(Convert.ToDouble((strAIvalues[7])), 2);
+                                break;
+                            case 8:
+                                Class1.AI_GAS1Value = Math.Round(Convert.ToDouble((strAIvalues[8])), 2);
+                                break;
+                            case 9:
+                                Class1.AI_GAS2Value = Math.Round(Convert.ToDouble((strAIvalues[9])), 2);
+                                break;
+
+                            default:
+                                break; // TODO: might not be correct. Was : Exit Select
+
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    AvantechAIs.m_iFailCount++;
+                }
+
+                if (AvantechAIs.m_iFailCount > 0)
+                {
+                    Avantech.AIEnabled = false;//timer1.Enabled = false;
+                    Avantech.bModbusConnected = false;
+                    AvantechConnectTimer.Enabled = true;
+                    ResetAvantechConnectTimerProperty();
+                    //MessageBox.Show("Please check the physical connection and MODBUS address setting!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
+                    ModuleErrorDialog objModuleErrorDialog = new ModuleErrorDialog();
+                    objModuleErrorDialog.ShowDialog();
+                }
+                if (AvantechAIs.m_iScanCount % 50 == 0)
+                    GC.Collect();
+            }
+            //// ***********End of AI*********** ////
             
             if (Avantech.DIOEnabled)
             {
@@ -3923,14 +4035,15 @@ namespace SG25
                     AvantechDIOs.m_iFailCount++;
                 }
 
-                if (AvantechDOs.m_iFailCount > 0)
+                if (AvantechDIOs.m_iFailCount > 0)
                 {
                     Avantech.DIOEnabled = false;//timer1.Enabled = false;
                     //OutputTimer.Enabled = false;
                     Avantech.bModbusConnected = false;
                     AvantechConnectTimer.Enabled = true;
                     ResetAvantechConnectTimerProperty();
-                    
+                    ModuleErrorDialog objModuleErrorDialog = new ModuleErrorDialog();
+                    objModuleErrorDialog.ShowDialog();
                 }
                 if (AvantechDIOs.m_iScanCount % 50 == 0)
                     GC.Collect();
@@ -4008,7 +4121,7 @@ namespace SG25
                     AvantechIO_Modules_Initialize();
 
                     // Testing Output Split
-                    OutputTimer.Enabled = true;
+                    DataAcquitionTimer.Enabled = true;
 
                     try
                     {
@@ -4107,7 +4220,7 @@ namespace SG25
                         cmdIO.BackColor = Color.Green;
                         AvantechIO_Modules_Initialize();
 
-                        OutputTimer.Enabled = true;
+                        DataAcquitionTimer.Enabled = true;
                         if (!MainThread.IsBusy)
                         {
                             MainThread.RunWorkerAsync();
@@ -4144,7 +4257,7 @@ namespace SG25
                                 DisconnectErrorOK = true;
                                 ResetAvantechConnectTimerProperty();
                                 Avantech.Avantech_AllFailCheckEnabled = false;
-                                OutputTimer.Enabled = false;
+                                DataAcquitionTimer.Enabled = false;
 
                                 // UI related disabled
                                 int i = 0;
