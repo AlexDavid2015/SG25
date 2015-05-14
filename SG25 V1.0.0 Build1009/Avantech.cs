@@ -152,6 +152,7 @@ namespace SG25
             ThreadStart newStart = new ThreadStart(Avantech.ShowWaitMsg1);
             Thread waitThread = new Thread(Avantech.ShowWaitMsg1);
             waitThread.Start();
+            waitThread.Join();
         }
         /// <summary>
         /// Refresh Current I/O Modules at this APAX controller

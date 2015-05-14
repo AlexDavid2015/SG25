@@ -908,6 +908,8 @@ namespace SG25
                 DataAcquitionTimer.Enabled = true;
                 Class1.DOOutputTimerGlobal = DataAcquitionTimer;
 
+                //Avantech.ThreadStartShowWaitForm();
+
                 try
                 {
                     if (!MainThread.IsBusy)
@@ -4413,7 +4415,7 @@ namespace SG25
                             AvantechDOs.m_iFailCount++;
                         }
 
-                        if (AvantechDOs.m_iFailCount > 0)
+                        if (AvantechDOs.m_iFailCount > 1)
                         {
                             Avantech.DOEnabled = false;//timer1.Enabled = false;
                             //OutputTimer.Enabled = false;
@@ -4457,7 +4459,7 @@ namespace SG25
                             AvantechAOs.m_iFailCount++;
                         }
 
-                        if (AvantechAOs.m_iFailCount > 0)
+                        if (AvantechAOs.m_iFailCount > 1)
                         {
                             Avantech.AOEnabled = false;//timer1.Enabled = false;
                             //OutputTimer.Enabled = false;
@@ -4506,7 +4508,7 @@ namespace SG25
                         AvantechDIs.m_iFailCount++;
                     }
 
-                    if (AvantechDIs.m_iFailCount > 0)
+                    if (AvantechDIs.m_iFailCount > 1)
                     {
                         Avantech.DIEnabled = false;//timer1.Enabled = false;
                         Avantech.bModbusConnected = false;
@@ -4590,7 +4592,7 @@ namespace SG25
                         AvantechAIs.m_iFailCount++;
                     }
 
-                    if (AvantechAIs.m_iFailCount > 0)
+                    if (AvantechAIs.m_iFailCount > 1)
                     {
                         Avantech.AIEnabled = false;//timer1.Enabled = false;
                         Avantech.bModbusConnected = false;
@@ -4603,6 +4605,8 @@ namespace SG25
                     if (AvantechAIs.m_iScanCount % 50 == 0)
                         GC.Collect();
                 }
+
+
                 if (Avantech.DIOEnabled)
                 {
 
@@ -4634,7 +4638,7 @@ namespace SG25
                             AvantechDIOs.m_iFailCount++;
                         }
 
-                        if (AvantechDOs.m_iFailCount > 0)
+                        if (AvantechDOs.m_iFailCount > 1)
                         {
                             Avantech.DIOEnabled = false;//timer1.Enabled = false;
                             //OutputTimer.Enabled = false;
