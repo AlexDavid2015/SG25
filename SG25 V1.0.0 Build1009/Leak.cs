@@ -549,7 +549,8 @@ namespace SG25
            
             int[] DOChannelArr = { 21, 1 }; //vent close,pump on
             bool[] DOStateArr = { false, true };
-            Class2.SetMultiDO( DOChannelArr, DOStateArr);
+            this.Invoke((MethodInvoker)delegate { Class2.SetMultiDO(DOChannelArr, DOStateArr); });
+            //Class2.SetMultiDO( DOChannelArr, DOStateArr);
             
             //Class2.SetDO(Class1.DOSlotNum, 21, false);//vent close
             //Class2.SetDO(Class1.DOSlotNum, 1, true);//pump on

@@ -3930,9 +3930,10 @@ namespace SG25
                         Avantech.Avantech_AllFailCheckEnabled = true;
                         BGWConnectAvantechStep = 1;
                         MessageBox.Show("Successful Connection to Fieldbus!");
-                        ThreadStart newStart = new ThreadStart(Avantech.ShowWaitMsg1);
+                        //ThreadStart newStart = new ThreadStart(Avantech.ShowWaitMsg1);
                         Thread waitThread = new Thread(Avantech.ShowWaitMsg1);
                         waitThread.Start();
+                        waitThread.Join();
                         AvantechConnectTimer.Stop();
                         ResetAvantechConnectTimerProperty();
                     }
@@ -4423,7 +4424,8 @@ namespace SG25
                             AvantechConnectTimer.Enabled = true;
                             ResetAvantechConnectTimerProperty();
                             //MessageBox.Show("Please check the physical connection and MODBUS address setting!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
-
+                            ModuleErrorDialog objModuleErrorDialog = new ModuleErrorDialog();
+                            objModuleErrorDialog.ShowDialog();
                         }
                         if (AvantechDOs.m_iScanCount % 50 == 0)
                             GC.Collect();
@@ -4493,14 +4495,19 @@ namespace SG25
                     {
                         AvantechDIs.m_iScanCount++;
                         AvantechDIs.m_iFailCount = 0;
-                        this.Invoke((MethodInvoker)delegate
-                        {
-                            for (i = 0; i < iDIChannelTotal; i++)
-                            {
-                                DI[i].BackColor = DIvalues[i] ? Color.Green : Color.Red;
+                        //this.Invoke((MethodInvoker)delegate
+                        //{
+                        //    for (i = 0; i < iDIChannelTotal; i++)
+                        //    {
+                        //        DI[i].BackColor = DIvalues[i] ? Color.Green : Color.Red;
 
-                            }
-                        });
+                        //    }
+                        //});
+                        for (i = 0; i < iDIChannelTotal; i++)
+                        {
+                            DI[i].BackColor = DIvalues[i] ? Color.Green : Color.Red;
+
+                        }
 
                     }
                     else

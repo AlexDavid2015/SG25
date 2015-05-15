@@ -1154,15 +1154,18 @@ namespace SG25
            
            int[] DOChannelArr = { 0, 22 }; //RF off,Vacuum Off
            bool[] DOStateArr = { false, false };
-           Class2.SetMultiDO(DOChannelArr, DOStateArr);
+           //Class2.SetMultiDO(DOChannelArr, DOStateArr);
+           this.Invoke((MethodInvoker)delegate { Class2.SetMultiDO(DOChannelArr, DOStateArr); }); 
 
 
            int[] DIOChannelArr = { Class1.DO24, Class1.DO25 }; //Gas1 off,Gas2 off
            bool[] DIOStateArr = { false, false };
-           Class2.SetMultiDIO(DIOChannelArr, DIOStateArr);
-          
-           Class2.SetDO(Class1.DOSlotNum, 1, false);//Pump off
-          
+           //Class2.SetMultiDIO(DIOChannelArr, DIOStateArr);
+           this.Invoke((MethodInvoker) delegate { Class2.SetMultiDIO(DIOChannelArr, DIOStateArr); });
+
+           //Class2.SetDO(Class1.DOSlotNum, 1, false);
+           this.Invoke((MethodInvoker) delegate { Class2.SetDO(Class1.DOSlotNum, 1, false); }); //Pump off
+
         }
 
         private void VentTimerTh()
@@ -1186,7 +1189,7 @@ namespace SG25
                         Application.DoEvents();
                         Thread.Sleep(500);
                         //Class2.Create10DOArray( 6, 0);
-                        Class2.SetDO(Class1.DOSlotNum, 21, false);
+                        this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 21, false); }); 
                        
                         if(IsHandleCreated)
                         {
@@ -1395,7 +1398,8 @@ namespace SG25
                     
                     int[] DOChannelArr = { 2, 3 }; //Manual tuner on,RF off
                     bool[] DOStateArr = {  false, true};
-                    Class2.SetMultiDO( DOChannelArr, DOStateArr);
+                    //Class2.SetMultiDO( DOChannelArr, DOStateArr);
+                    this.Invoke((MethodInvoker)delegate { Class2.SetMultiDO(DOChannelArr, DOStateArr); });
 
                     //Class2.SetDO(Class1.DOSlotNum, 2, false);//Manual Tuner off
                     //Class2.SetDO(Class1.DOSlotNum, 3, true); //Auto Tuner On
@@ -2142,7 +2146,8 @@ namespace SG25
                     
                     int[] DOChannelArr = { Class1.DO27, Class1.DO26, Class1.DO28, Class1.DO29 }; //Turn off yellow light,Turn off green light,Turn on red light,Turn on Buzzer
                     bool[] DOStateArr = { false, false, true, true };
-                    Class2.SetMultiDIO(DOChannelArr, DOStateArr);
+                    this.Invoke((MethodInvoker)delegate { Class2.SetMultiDIO(DOChannelArr, DOStateArr); });
+                    //Class2.SetMultiDIO(DOChannelArr, DOStateArr);
                     
                    // Class2.SetDO(Class1.DIOSlotNum, 3 + AvantechDIOs.m_iDoOffset, false);//Turn off yellow light
                    // Class2.SetDO(Class1.DIOSlotNum, 2 + AvantechDIOs.m_iDoOffset, false);//Turn off green light
@@ -2161,7 +2166,8 @@ namespace SG25
 
                     int[] DOChannelArr = { Class1.DO28, Class1.DO29, Class1.DO27 }; //Turn off red light,Turn off Buzzer,Turn on yellow light
                     bool[] DOStateArr = { false, false, true };
-                    Class2.SetMultiDIO(DOChannelArr, DOStateArr);
+                    this.Invoke((MethodInvoker)delegate { Class2.SetMultiDIO(DOChannelArr, DOStateArr); });
+                    //Class2.SetMultiDIO(DOChannelArr, DOStateArr);
                     
                    // Class2.SetDO(Class1.DIOSlotNum, 4 + AvantechDIOs.m_iDoOffset, false);//Turn off red light
                    // Class2.SetDO(Class1.DIOSlotNum, 5 + AvantechDIOs.m_iDoOffset, false);//Turn off Buzzer

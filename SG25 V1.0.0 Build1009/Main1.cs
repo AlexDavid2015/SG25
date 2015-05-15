@@ -1363,7 +1363,8 @@ namespace SG25
 
                     int[] DOChannelArr = { 0, 20 }; //Turn off yellow light,Turn off green light,Turn on red light,Turn on Buzzer
                     bool[] DOStateArr = { false, false };
-                    Class2.SetMultiDO(DOChannelArr, DOStateArr);
+                    //Class2.SetMultiDO(DOChannelArr, DOStateArr);
+                    this.Invoke((MethodInvoker)delegate { Class2.SetMultiDO(DOChannelArr, DOStateArr); });
 
                     //Class2.SetDO(Class1.DOSlotNum, 0, false); //RF
                     //Class2.SetDO(Class1.DOSlotNum, 20, false); //Pressure
@@ -1380,7 +1381,8 @@ namespace SG25
 
                     int[] DOChannelArr = { 20, 21 }; //Pressure Valve off,Purge Valve On ,Gas1 Off,Gass 2 Off,VacVAlve Off
                     bool[] DOStateArr = { false, true };
-                    Class2.SetMultiDO(DOChannelArr, DOStateArr);
+                    //Class2.SetMultiDO(DOChannelArr, DOStateArr);
+                    this.Invoke((MethodInvoker)delegate { Class2.SetMultiDO(DOChannelArr, DOStateArr); });
 
 
                     int[] DIOChannelArr = { Class1.DO24, Class1.DO25 }; //Pressure Valve off,Purge Valve On ,Gas1 Off,Gass 2 Off,VacVAlve Off
@@ -3344,12 +3346,14 @@ namespace SG25
 
             int[] DOChannelArr = { 0, 22 }; //Pressure Valve off,Purge Valve On ,Gas1 Off,Gass 2 Off,VacVAlve Off
             bool[] DOStateArr = { false, false };
-            Class2.SetMultiDO(DOChannelArr, DOStateArr);
+            //Class2.SetMultiDO(DOChannelArr, DOStateArr);
+            this.Invoke((MethodInvoker)delegate { Class2.SetMultiDO(DOChannelArr, DOStateArr); });
 
 
             int[] DIOChannelArr = { Class1.DO24, Class1.DO25 }; //Pressure Valve off,Purge Valve On ,Gas1 Off,Gass 2 Off,VacVAlve Off
             bool[] DIOStateArr = { false, false };
-            Class2.SetMultiDIO(DIOChannelArr, DIOStateArr);
+            //Class2.SetMultiDIO(DIOChannelArr, DIOStateArr);
+            this.Invoke((MethodInvoker)delegate { Class2.SetMultiDIO(DIOChannelArr, DIOStateArr); });
 
             //Class2.SetDO(Class1.DOSlotNum, 0, false);//RF off
             //Class2.SetDO(Class1.DOSlotNum, 22, false);//Vacuum off
@@ -3358,7 +3362,8 @@ namespace SG25
 
             Thread.Sleep(400);
             //Class2.Create10DOArray(6, 1); // open Purge Valve
-            Class2.SetDO(Class1.DOSlotNum, 21, true); // open Purge Valve
+            //Class2.SetDO(Class1.DOSlotNum, 21, true); // open Purge Valve
+            this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 21, true); });
             do
             {
                 Label44.Invoke((MethodInvoker)delegate { Label44.Text = j.ToString(); });
@@ -3392,7 +3397,8 @@ namespace SG25
 
                     CycleRunCont();
                     //Class2.Create10DOArray(6, 0); // close Purge Valve
-                    Class2.SetDO(Class1.DOSlotNum, 21, true);  // close Purge Valve
+                    //Class2.SetDO(Class1.DOSlotNum, 21, true);  // close Purge Valve
+                    this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 21, true); });
                     break;
                 }
                 j -= 1;

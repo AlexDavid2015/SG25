@@ -715,9 +715,22 @@ namespace SG25
                 }
             }
             else if (m_adamSocket.Modbus().LastError == Advantech.Common.ErrorCode.Socket_Recv_Fail)
-                MessageBox.Show("SYS_GetGlobalActive failed (Err: " + m_adamSocket.Modbus().LastError.ToString() + ")", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            {
+                MessageBox.Show("SYS_GetGlobalActive failed (Err: " + m_adamSocket.Modbus().LastError.ToString() + ")",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                Avantech.DIOEnabled = false;//timer1.Enabled = false;
+                Avantech.bModbusConnected = false;
+                Class1.RetForm.AvantechConnectTimer.Enabled = true;
+                Class1.RetForm.ResetAvantechConnectTimerProperty();
+            }
             else
+            {
                 MessageBox.Show("Checking controllable failed, utility only could monitor io data now. (" + m_adamSocket.Modbus().LastError.ToString() + ")", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                Avantech.DIOEnabled = false;//timer1.Enabled = false;
+                Avantech.bModbusConnected = false;
+                Class1.RetForm.AvantechConnectTimer.Enabled = true;
+                Class1.RetForm.ResetAvantechConnectTimerProperty();
+            }                
             //Avantech.DIOEnabled = true;// enable DIO refresh
             return false;
         }
