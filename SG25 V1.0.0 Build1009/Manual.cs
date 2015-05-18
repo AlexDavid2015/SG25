@@ -1136,7 +1136,7 @@ namespace SG25
             {
                 Thread.Sleep(200);
                 //Class2.Create10DOArray(5, 1);
-                Class2.SetDO(Class1.DOSlotNum, 20, true);// Pressure Valve open
+                this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 20, true); });// Pressure Valve open
                 
                 if (Class1.FVent == false)
                 {
@@ -1409,12 +1409,12 @@ namespace SG25
                 if (TTick < 3 & TTick > 0)
                 {
                    // Class2.Create10DOArray(17, 1); //RF ON
-                    Class2.SetDO(Class1.DOSlotNum, 0, true); //RF ON
+                    this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 0, true);  }); //RF ON
                 }
                 else if (TTick > 59)  //& TTick < 30
                 {
                    // Class2.Create10DOArray(17, 0); 
-                    Class2.SetDO(Class1.DOSlotNum, 0, false); // RF OFF
+                    this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 0, false);  }); // RF OFF
                 }
                
                 

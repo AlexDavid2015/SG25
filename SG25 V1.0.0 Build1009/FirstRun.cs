@@ -23,7 +23,8 @@ namespace SG25
             this.Hide();
             Class1.FirstRunObj = this;
             Class1.Connobj = new ConnectPage();
-            Class1.Connobj.Show();
+            //Class1.Connobj.Show();
+            Class1.Connobj.ShowDialog();
             
         }
     }

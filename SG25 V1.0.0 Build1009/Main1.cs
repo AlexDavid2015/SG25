@@ -1255,7 +1255,7 @@ namespace SG25
                 if (Class1.ClockTick >= 15 & Class1.RunStep == 5)
                 {
                     //Class2.Create10DOArray(5, 1); // Pressure Valve
-                    Class2.SetDO(Class1.DOSlotNum, 20, true);
+                    this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 20, true); });
                     Class1.RunStep = 6;
                 }
 
@@ -1293,7 +1293,7 @@ namespace SG25
                 {
                     if (Class1.DO_RFON == false)
                     {
-                        Class2.SetDO(Class1.DOSlotNum, 0, true); //RF ON
+                        this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 0, true);  }); //RF ON
                         Class1.RunStep = 9;
                     }
                 }
@@ -1303,7 +1303,7 @@ namespace SG25
                     Thread.Sleep(100);
                     //wait 100 msec
                     // Class2.Create10DOArray(18, 0); //need to check
-                    Class2.SetDO(Class1.DOSlotNum, 2, true);
+                    this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 2, true); });
                     // Set Tuner to Automatic
                     Class1.RunStep = 10;
                 }
@@ -1323,7 +1323,7 @@ namespace SG25
                 {
                     if (Class1.ByPass == false)
                     {
-                        Class2.SetDO(Class1.DOSlotNum, 0, false);//Close RF ON\
+                        this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 0, false); });//Close RF ON\
                         Class1.CycleStart = false;
                         CycleRunCont();
                         Class1.FatalError = false;
@@ -1389,7 +1389,7 @@ namespace SG25
                     bool[] DIOStateArr = { false, false };
                     Class2.SetMultiDIO(DIOChannelArr, DIOStateArr);
 
-                    Class2.SetDO(Class1.DOSlotNum, 22, false);//VacVAlve Off
+                    this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 22, false); });//VacVAlve Off
 
                     //Class2.SetDO(Class1.DOSlotNum, 20, false);//Pressure Valve off
                     //Class2.SetDO(Class1.DOSlotNum, 21, true); //Purge Valve On 

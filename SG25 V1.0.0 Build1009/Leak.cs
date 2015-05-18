@@ -208,8 +208,8 @@ namespace SG25
                     if (Class1.DO_VacuumON == false)
                     {
                        // Class2.Create10DOArray(7, 1);//vacumvalve
-                       
-                        Class2.SetDO(Class1.DOSlotNum, 22, true);//vacuum close
+
+                        this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 22, true);  });//vacuum close
                        
                         
                     }
@@ -219,8 +219,8 @@ namespace SG25
                     if (Class1.DO_PressureON == false)
                     {
                        // Class2.Create10DOArray(5, 1);//pressure valve
-                       
-                        Class2.SetDO(Class1.DOSlotNum, 20, true);//pres close
+
+                        this.Invoke((MethodInvoker)delegate { Class2.SetDO(Class1.DOSlotNum, 20, true);  });//pres close
                     }
                 }
             } while (true);
