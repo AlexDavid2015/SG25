@@ -153,6 +153,7 @@
             this.cmdSystemToDefault = new System.Windows.Forms.Button();
             this.cmdSystemSettings = new System.Windows.Forms.Button();
             this.gbAOSafetyFunction = new System.Windows.Forms.GroupBox();
+            this.cmdResetAO = new System.Windows.Forms.Button();
             this.btnAOSetAsSafety = new System.Windows.Forms.Button();
             this.btnAOSetSafetyValue = new System.Windows.Forms.Button();
             this.chbxAOEnableSafety = new System.Windows.Forms.CheckBox();
@@ -167,6 +168,8 @@
             this.cmdNETWORK = new System.Windows.Forms.Button();
             this.cmdPWR = new System.Windows.Forms.Button();
             this.gbDO = new System.Windows.Forms.GroupBox();
+            this.cmdResetDO2 = new System.Windows.Forms.Button();
+            this.cmdResetDO1 = new System.Windows.Forms.Button();
             this.btnDOSetSafetyValue = new System.Windows.Forms.Button();
             this.chbxDOEnableSafety = new System.Windows.Forms.CheckBox();
             this.lblDOSafetyFunction = new System.Windows.Forms.Label();
@@ -1549,6 +1552,7 @@
             // 
             // gbAOSafetyFunction
             // 
+            this.gbAOSafetyFunction.Controls.Add(this.cmdResetAO);
             this.gbAOSafetyFunction.Controls.Add(this.btnAOSetAsSafety);
             this.gbAOSafetyFunction.Controls.Add(this.btnAOSetSafetyValue);
             this.gbAOSafetyFunction.Controls.Add(this.chbxAOEnableSafety);
@@ -1558,6 +1562,15 @@
             this.gbAOSafetyFunction.TabIndex = 141;
             this.gbAOSafetyFunction.TabStop = false;
             this.gbAOSafetyFunction.Text = "AO Safety Function";
+            // 
+            // cmdResetAO
+            // 
+            this.cmdResetAO.Location = new System.Drawing.Point(101, 25);
+            this.cmdResetAO.Name = "cmdResetAO";
+            this.cmdResetAO.Size = new System.Drawing.Size(76, 26);
+            this.cmdResetAO.TabIndex = 145;
+            this.cmdResetAO.Text = "ResetAO";
+            this.cmdResetAO.Click += new System.EventHandler(this.cmdResetAO_Click);
             // 
             // btnAOSetAsSafety
             // 
@@ -1688,6 +1701,8 @@
             // 
             // gbDO
             // 
+            this.gbDO.Controls.Add(this.cmdResetDO2);
+            this.gbDO.Controls.Add(this.cmdResetDO1);
             this.gbDO.Controls.Add(this.btnDOSetSafetyValue);
             this.gbDO.Controls.Add(this.chbxDOEnableSafety);
             this.gbDO.Controls.Add(this.lblDOSafetyFunction);
@@ -1736,6 +1751,24 @@
             this.gbDO.TabIndex = 74;
             this.gbDO.TabStop = false;
             this.gbDO.Text = "Digital Outputs";
+            // 
+            // cmdResetDO2
+            // 
+            this.cmdResetDO2.Location = new System.Drawing.Point(300, 328);
+            this.cmdResetDO2.Name = "cmdResetDO2";
+            this.cmdResetDO2.Size = new System.Drawing.Size(84, 26);
+            this.cmdResetDO2.TabIndex = 59;
+            this.cmdResetDO2.Text = "ResetDO";
+            this.cmdResetDO2.Click += new System.EventHandler(this.cmdResetDO2_Click);
+            // 
+            // cmdResetDO1
+            // 
+            this.cmdResetDO1.Location = new System.Drawing.Point(300, 168);
+            this.cmdResetDO1.Name = "cmdResetDO1";
+            this.cmdResetDO1.Size = new System.Drawing.Size(84, 26);
+            this.cmdResetDO1.TabIndex = 58;
+            this.cmdResetDO1.Text = "ResetDO";
+            this.cmdResetDO1.Click += new System.EventHandler(this.cmdResetDO1_Click);
             // 
             // btnDOSetSafetyValue
             // 
@@ -2805,7 +2838,6 @@
             // 
             // DataAcquitionTimer
             // 
-            this.DataAcquitionTimer.Interval = 500;
             this.DataAcquitionTimer.Tick += new System.EventHandler(this.DataAcquitionTimer_Tick);
             // 
             // AutoStartup
@@ -3122,5 +3154,8 @@
         private System.Windows.Forms.TrackBar tBarRFSET_0Val;
         internal System.Windows.Forms.Label lblRFSET_0;
         private System.Windows.Forms.Label lblResumeConnectionInfo;
+        private System.Windows.Forms.Button cmdResetAO;
+        private System.Windows.Forms.Button cmdResetDO2;
+        private System.Windows.Forms.Button cmdResetDO1;
     }
 }

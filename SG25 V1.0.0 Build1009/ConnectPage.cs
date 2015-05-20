@@ -2966,7 +2966,79 @@ namespace SG25
             Avantech.AOEnabled = true;//timer1.Enabled = true;
         }
 
-      
+        private void SetAO(int idx, float fVal)
+        {
+            AvantechAOs.m_bAOValueModified[idx] = false;// b_AOValueModified = false;
+            if (!AvantechAOs.CheckControllable())
+            {
+                lblAOErr.Text = "-1";
+                return;
+            }
+
+            Avantech.AOEnabled = false;// timer1.Enabled = false;
+            float fHigh, fLow;//float fVal, fHigh, fLow;
+            //if (Class1.txtAOOutputVals[idx].Text.Length == 0)
+            //{
+            //    MessageBox.Show("Illegal value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+            //    return;
+            //}
+
+            try
+            {
+                //Get range higf & low
+                AnalogOutput.GetRangeHighLow(AvantechAOs.m_usRanges[idx], out fHigh, out fLow);
+                if (fHigh - fLow == 0)
+                {
+                    MessageBox.Show("GetRangeHighLow() failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    return;
+                }
+                //convert output value to float
+                //fVal = 0.0f;
+                //if (Class1.txtAOOutputVals[idx].Text != null && Class1.txtAOOutputVals[idx].Text.Length > 0)
+                //{
+                //    try
+                //    {
+                //        fVal = Convert.ToSingle(Class1.txtAOOutputVals[idx].Text);
+                //    }
+                //    catch
+                //    {
+                //        System.Windows.Forms.MessageBox.Show("Invalid value: " + Class1.txtAOOutputVals[idx].Text);
+                //    }
+                //}
+                if (fVal > fHigh || fVal < fLow)
+                {
+                    MessageBox.Show("Illegal value! Please enter the value " + fLow.ToString() + " ~ " + fHigh.ToString() + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    return;
+                }
+                //Set channel value
+                if (AvantechAOs.m_adamSocket.AnalogOutput().SetCurrentValue(AvantechAOs.m_idxID, idx, AvantechAOs.m_usRanges[idx], fVal))
+                {
+                    //RefreshOutputPanel(fHigh, fLow, fVal);
+                    RefreshAnalogOutputPanel(fHigh, fLow, fVal, idx);// refresh special index of analog output panel
+
+                    // Same functionality of setting values
+                    //lblAO_0High.Text = fHigh.ToString();
+                    //lblAO_0Low.Text = fLow.ToString();
+                    //txtAO_0Val.Text = fVal.ToString("0.000");
+                    //lblAO_0Value.Text = fVal.ToString("0.000");
+                }
+                else
+                {
+                    MessageBox.Show("Change current value failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return;
+            }
+            RefreshAOData();//RefreshData();
+            //string strInfo = string.Format("Set output AO_{0} value done!", idx);
+            //MessageBox.Show(strInfo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+
+            Avantech.AOEnabled = true;//timer1.Enabled = true;
+        }
 
 
         private void btnAO_0ApplyOutput_Click(object sender, EventArgs e)
@@ -4357,6 +4429,7 @@ namespace SG25
         {
             int i = 0;
             bool bDORet;
+            DataAcquitionTimer.Enabled = false;
             try
             {
 
@@ -4671,9 +4744,94 @@ namespace SG25
                 //MessageBox.Show("Connection error, Please check Advantech Connection");
 
             }
+            DataAcquitionTimer.Enabled = true;
         }
 
-              
+        private void cmdResetAO_Click(object sender, EventArgs e)
+        {
+            if (Avantech.bModbusConnected)
+            {
+                // Reset all 8 AO channels' values to 0
+                for (int i = 0; i < Class1.AOOutputVals.Length; i++)
+                {
+                    SetAO(i, 0);
+                    Thread.Sleep(100);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Modbus connection error!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void cmdResetDO1_Click(object sender, EventArgs e)
+        {
+            if (Avantech.bModbusConnected)
+            {
+                bool bVal = false;
+                if (!AvantechDOs.CheckControllable())
+                {
+                    lblDOErr.Text = "-1";
+                    return;
+                }
+
+                // Reset Avantech DO
+                int[] DOChannelArr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
+                                                 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 }; //all 24 channels
+                bool[] DOStateArr = { false, false, false, false, false, false, false, false, false, false, false, false, 
+                                                false, false, false, false, false, false, false, false, false, false, false, false };
+                Class2.SetMultiDO(DOChannelArr, DOStateArr);
+
+                // Reset Avantech DO's UI
+                for (int i = 0; i < 24; i++)
+                {
+                    DO[i].BackColor = Color.Red;
+                }
+            }
+            else
+            {
+                // no connection, just click as normal buttons
+                // Reset Avantech DO's UI
+                for (int i = 0; i < 24; i++)
+                {
+                    DO[i].BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void cmdResetDO2_Click(object sender, EventArgs e)
+        {
+            if (Avantech.bModbusConnected)
+            {
+                bool bVal = false;
+                if (!AvantechDIOs.CheckControllable())
+                {
+                    lblDIOErr.Text = "-1";
+                    return;
+                }
+
+                // Reset Avantech DIO
+                int[] DIOChannelArr = { Class1.DO24, Class1.DO25, Class1.DO26, Class1.DO27, Class1.DO28, Class1.DO29, 
+                                                  Class1.DO30, Class1.DO31, Class1.DO32, Class1.DO33, Class1.DO34, Class1.DO35 }; //all 12 channels on DIO
+                bool[] DIOStateArr = { false, false, false, false, false, false, false, false, false, false, false, false };
+                Class2.SetMultiDIO(DIOChannelArr, DIOStateArr);
+
+                // Reset Avantech DIO's UI
+                for (int i = 24; i < 24 + DIOChannelArr.Length; i++)
+                {
+                    DO[i].BackColor = Color.Red;
+                }
+            }
+            else
+            {
+                // no connection, just click as normal buttons
+                // Reset Avantech DIO's UI
+                for (int i = 24; i < 36; i++)
+                {
+                    DO[i].BackColor = Color.Red;
+                }
+            }
+        }              
     }
 }
 
